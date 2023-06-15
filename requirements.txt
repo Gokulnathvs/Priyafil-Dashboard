@@ -1,4 +1,5 @@
 pandas
+openpyxl
 Pillow==9.2.0
 plotly==5.9.0
 streamlit==1.23.1
