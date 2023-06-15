@@ -1,0 +1,27 @@
+top_5_StateID = (
+    df_selection.groupby(by=["STATE ID"]).sum()[["AMOUNT"]].nlargest(5, "AMOUNT")
+)
+
+fig_product_top_5_StateID = px.bar(
+    top_5_StateID,
+    x=top_5_StateID.index,
+    y=["AMOUNT"],
+    orientation="v",
+    title="<b> TOP 5 State </b>",
+    color_discrete_sequence=["#3FD771"],
+    template="plotly_white"
+)
+
+fig_product_top_5_StateID.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=dict(showgrid=False)
+)
+
+fig_product_top_5_StateID.update_layout(
+    yaxis=dict(
+        title="Sum of Amount",
+        tickformat=",d"
+    )
+)
+
+st.plotly_chart(fig_product_top_5_State)
