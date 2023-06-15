@@ -1,4 +1,4 @@
-pandas==1.4.4
+pandas
 Pillow==9.2.0
 plotly==5.9.0
 streamlit==1.23.1
