@@ -1,4 +1,4 @@
-import pandas as pd  # pip install pandas openpyxl
+import pandas as pd  # pip install openpyxl
 
 from PIL import Image
 import streamlit as st  # pip install streamlit
@@ -55,21 +55,31 @@ def page1():
     totalSalesAmount = int(df_selection["AMOUNT"].sum())
 
     c1, c2, c3, c4, c5 = st.columns(5)
+
     with c1:
-        st.subheader("Total Fabricated in Mtrs:")
-        st.subheader(f"{totalFabricatedMtrs:,}")
+        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+                    '<h4>Total Fabricated in Mtrs:</h4>'
+                    f'<h3>{totalFabricatedMtrs:,}</h3></div>', unsafe_allow_html=True)
+
     with c2:
-        st.subheader("Total Fabricated in Kgs:")
-        st.subheader(f"{totalFabricatedKgs:,}")
+        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+                    '<h4>Total Fabricated in Kgs:</h4>'
+                    f'<h3>{totalFabricatedKgs:,}</h3></div>', unsafe_allow_html=True)
+
     with c3:
-        st.subheader("Total Sales in Mtrs:")
-        st.subheader(f"{totalSalesMtrs:,}")
+        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+                    '<h4>Total Sales in Mtrs:</h4>'
+                    f'<h3>{totalSalesMtrs:,}</h3></div>', unsafe_allow_html=True)
+
     with c4:
-        st.subheader("Total Sales in Kgs:")
-        st.subheader(f"{totalSalesKgs:,}")
+        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+                    '<h4>Total Sales in Kgs:</h4>'
+                    f'<h3>{totalSalesKgs:,}</h3></div>', unsafe_allow_html=True)
+
     with c5:
-        st.subheader("Total Sales in Amount:")
-        st.subheader(f"{totalSalesAmount:,}")
+        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+                    '<h4>Total Sales in Amount:</h4>'
+                    f'<h3>{totalSalesAmount:,}</h3></div>', unsafe_allow_html=True)
 
     st.markdown("""---""")
 
