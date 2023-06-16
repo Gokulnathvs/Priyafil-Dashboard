@@ -62,7 +62,7 @@ def page1():
                     f'<h3>{totalFabricatedMtrs:,}</h3></div>', unsafe_allow_html=True)
 
     with c2:
-        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+        st.markdown('<div style="background-color: #D4F0FF; padding: 10px; text-align: center;">'
                     '<h4>Total Fabricated in Kgs:</h4>'
                     f'<h3>{totalFabricatedKgs:,}</h3></div>', unsafe_allow_html=True)
 
@@ -72,7 +72,7 @@ def page1():
                     f'<h3>{totalSalesMtrs:,}</h3></div>', unsafe_allow_html=True)
 
     with c4:
-        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+        st.markdown('<div style="background-color: #D4F0FF; padding: 10px; text-align: center;">'
                     '<h4>Total Sales in Kgs:</h4>'
                     f'<h3>{totalSalesKgs:,}</h3></div>', unsafe_allow_html=True)
 
@@ -80,6 +80,36 @@ def page1():
         st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
                     '<h4>Total Sales in Amount:</h4>'
                     f'<h3>{totalSalesAmount:,}</h3></div>', unsafe_allow_html=True)
+
+    st.markdown("""---""")
+
+    averageFabricatedMtrs = round(df_selection["FABRIC MTRS"].mean(), 2)
+    averageFabricatedKgs = round(df_selection["FABRIC KGS"].mean(), 2)
+    averageSalesMtrs = round(df_selection["SOLD MTRS"].mean(), 2)
+    averageSalesKgs = round(df_selection["SOLD KGS"].mean(), 2)
+    averageSalesAmt = round(df_selection["AMOUNT"].mean(), 2)
+
+    c6, c7, c8, c9, c10 = st.columns(5)
+    with c6:
+        st.markdown('<div style="background-color: #D4F0FF; padding: 10px; text-align: center;">'
+                    '<h4>Average Fabricated in Mtrs:</h4>'
+                    f'<h3>{averageFabricatedMtrs:,}</h3></div>', unsafe_allow_html=True)
+    with c7:
+        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+                    '<h4>Average Fabricated in Kgs:</h4>'
+                    f'<h3>{averageFabricatedKgs:,}</h3></div>', unsafe_allow_html=True)
+    with c8:
+        st.markdown('<div style="background-color: #D4F0FF; padding: 10px; text-align: center;">'
+                    '<h4>Average Sales in Mtrs:</h4>'
+                    f'<h3>{averageSalesMtrs:,}</h3></div>', unsafe_allow_html=True)
+    with c9:
+        st.markdown('<div style="background-color: #C2E4FF; padding: 10px; text-align: center;">'
+                    '<h4>Average Sales in Kgs:</h4>'
+                    f'<h3>{averageSalesKgs:,}</h3></div>', unsafe_allow_html=True)
+    with c10:
+        st.markdown('<div style="background-color: #D4F0FF; padding: 10px; text-align: center;">'
+                    '<h4>Average Sales in Amont:</h4>'
+                    f'<h3>{averageSalesAmt:,}</h3></div>', unsafe_allow_html=True)
 
     st.markdown("""---""")
 
